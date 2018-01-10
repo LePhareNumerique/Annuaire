@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Ajouter un membre</title>
+		<link rel="stylesheet" href="css/basics.css" media="screen" title="no title" charset="utf-8">
+	</head>
+
+	<body>
+	
+		<a href="read.php">Retour</a>
+		<h1>Ajouter un membre</h1>
+		<div class="fond">
+			<form action="traitement.php" method="post">
+				<div>
+					<label for="nom">Nom</label>
+					<input type="text" name="nom" value="">
+				</div>
+
+				<div>
+					<label for="adresse">Adresse</label>
+					<input type="text" name="adresse" value="">
+				</div>
+
+
+				<div>
+					<label for="cp">Code Postal</label>
+					<input type="text" name="cp" value="">
+				</div>
+
+				<div>
+					<label for="ville">Ville</label>
+					<input type="text" name="ville" value="">
+				</div>
+
+				<div>
+					<label for="phone">Téléphone</label>
+					<input type="text" name="phone" value="">
+				</div>
+	
+				<div>
+					<label for="mail">E-mail</label>
+					<input type="text" name="mail" value="">
+				</div>
+
+				<div>
+					<select name="categorie">
+						<option value="Adhérent">Adhérent</option>
+						<option value="Prospect">Prospect</option>
+						<option value="Bienfaiteur">Bienfaiteur</option>
+						<option value="Collectivité">Collectivité</option>
+					</select>
+				</div>
+
+				<button type="submit" name="button">Envoyer</button>
+			</form>
+		</div>
+	</body>
+</html>
