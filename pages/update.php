@@ -7,7 +7,7 @@
 
 	<body>
 		<?php
-			require 'connect.php';
+			require '../process/connect.php';
 
 			$sql='SELECT * FROM annuaire WHERE id = '.$_GET['id'].'';
 			$res=$bdd->query($sql);
@@ -19,7 +19,7 @@
 		<h1>Modifier</h1>
 
 		<div class="fond">
-			<form action="traitement2.php" method="post">
+			<form action="../process/traitement2.php" method="post">
 			
 
 					<input type="hidden" name="id" value="<?php echo $_GET['id'] ?>">
@@ -57,10 +57,19 @@
 				<div>
 					<select name="categorie">
 						<option <?php if($resu['categorie'] == 'Adhérent') echo 'selected'; ?> value="Adhérent">Adhérent</option>
-						<option <?php if($resu['categorie'] == 'Prospect') echo 'selected'; ?> value="Prospect">Prospect</option>
+						<option <?php if($resu['categorie'] == 'Bureau') echo 'selected'; ?> value="Bureau">Bureau</option>
+						<option <?php if($resu['categorie'] == 'CA') echo 'selected'; ?> value="CA">CA</option>
 						<option <?php if($resu['categorie'] == 'Bienfaiteur') echo 'selected'; ?> value="Bienfaiteur">Bienfaiteur</option>
+						<option <?php if($resu['categorie'] == 'Association') echo 'selected'; ?> value="Association">Association</option>
+						<option <?php if($resu['categorie'] == 'Entreprise') echo 'selected'; ?> value="Entreprise">Entreprise</option>
 						<option <?php if($resu['categorie'] == 'Collectivité') echo 'selected'; ?> value="Collectivité">Collectivité</option>
+						<option <?php if($resu['categorie'] == 'Prospect') echo 'selected'; ?> value="Prospect">Prospect</option>
 					</select>
+				</div>
+
+				<div>
+					<label for="com">Commentaire</label>
+					<input type="text" name="com" value="<?php echo $resu['commentaire'] ?>">
 				</div>
 
 				<button type="submit" name="button">Envoyer</button>

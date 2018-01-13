@@ -11,7 +11,7 @@
 		<a href="read.php">Retour</a>
 		<h1>Ajouter un membre</h1>
 		<div class="fond">
-			<form action="traitement.php" method="post">
+			<form action="../process/traitement.php" method="post">
 				<div>
 					<label for="nom">Nom</label>
 					<input type="text" name="nom" value="">
@@ -46,10 +46,19 @@
 				<div>
 					<select name="categorie">
 						<option value="Adhérent">Adhérent</option>
-						<option value="Prospect">Prospect</option>
+						<option value="Bureau">Bureau</option>
+						<option value="CA">CA</option>
 						<option value="Bienfaiteur">Bienfaiteur</option>
+						<option value="Association">Association</option>
+						<option value="Entreprise">Entreprise</option>
 						<option value="Collectivité">Collectivité</option>
+						<option value="Prospect">Prospect</option>
 					</select>
+				</div>
+
+				<div>
+					<label for="com">Commentaire</label>
+					<input type="text" name="com" value="">
 				</div>
 
 				<button type="submit" name="button">Envoyer</button>
