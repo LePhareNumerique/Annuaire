@@ -90,7 +90,7 @@
           <td id='mail'><?php echo $donnees['mail']; ?></td>
           <td id='categorie'><?php echo $donnees['categorie']; ?></td>
           <td id='commentire'><?php echo $donnees['commentaire']; ?></td>
-          <td class="modifs"><a id="mod" href="pages/update.php?id=<?php echo $donnees['id']; ?> "> <img src="inc/img/modify.png"> </a><a class="sup" href="pages/delete.php?id=<?php echo $donnees['id']; ?>"> <img src="inc/img/delete.png"> </a></td>      
+          <td class="modifs"><a id="mod" href="pages/update.php?id=<?php echo $donnees['id']; ?> "> <img src="inc/img/modify.png"> </a><a class="sup" href="pages/delete.php?id=<?php echo $donnees['id']; ?>" onclick="Supp(this.href); return(false);"> <img src="inc/img/delete.png"> </a></td>      
       </tr>
       
       <?php
@@ -107,5 +107,13 @@
     <br>
     <br>  
     
+    <script type="text/javascript">
+            function Supp(link){
+                if(confirm('Confirmer la suppression ?')){
+                    document.location.href = link;
+                }
+            }
+        </script>
+
   </body>
 </html>
