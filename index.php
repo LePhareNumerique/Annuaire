@@ -3,26 +3,29 @@
   <head>
     <meta charset="utf-8">
     <title>Annuaire</title>
+    <link rel="stylesheet" type="text/css" href="inc/CSS/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   </head>
 
   <body>
-    <h1>Liste des membres</h1>
+    <h1>Annuaire du Phare</h1>
 
     <form class="cherche" method="GET">
-      <input type="search" placeholder="Recherche" name="q"/>
-      <div>
-        Recherche par
-        <select name="choix">
-            <option value="nom">Nom</option>
-            <option value="ville">Ville</option>
-            <option value="categorie">Catégorie</option>
-            <option value="commentaire">Commentaire</option>
-            <option value="tout">Tout</option>
-        </select>
-      </div>
-      <input type="submit" value="Valider" name="">
+    	
+      		<input type="search" placeholder="Entrez votre recherche ici" name="q"/>
+        	
+	        <select name="choix">
+	            <option value="nom">Recherche par nom</option>
+	            <option value="ville">Recherche par ville</option>
+	            <option value="categorie">Recherche par catégorie</option>
+	            <option value="commentaire">Recherche par commentaire</option>
+	            <option value="tout">Recherche globale</option>
+	        </select>
+          
+          <input id="btn" type="submit" value="Va chercher !" name="">
+       
     </form>
-<br>
+    
     <table>
       <tr>
           <th>Nom</th>
@@ -39,13 +42,13 @@
       <!-- Afficher la liste des contacts -->
       <?php
         require 'process/connect.php';
+        
         $reponse = $bdd->query('SELECT * FROM annuaire ORDER BY nom ASC');
 
         if(isset($_GET['q']) AND !empty($_GET['q'])){
           $q = htmlspecialchars($_GET['q']);
           $c = $_GET['choix'];
-
-          
+     
           switch ($c) {
             case 'nom':
               $reponse = $bdd->query('SELECT * FROM annuaire WHERE nom LIKE "%'.$q.'%" ORDER BY nom ASC');
@@ -64,13 +67,19 @@
               break;
           }
         }
-
-        $compte = $reponse->rowcount();
-        echo 'Nb de résultats : '.$compte;
-        
-        while ($donnees = $reponse->fetch()){
-       
+   
       ?>
+      
+      <div class="cherche2">
+        
+        <?php
+          $compte = $reponse->rowcount();
+          echo 'Nb de résultats : <span>'.$compte.'</span>';
+
+          while ($donnees = $reponse->fetch()){
+        ?>
+
+      </div>
        
       <tr>
           <td id='nom'><?php echo $donnees['nom']; ?></td>
@@ -80,8 +89,8 @@
           <td id='telephone'><?php echo $donnees['telephone']; ?></td>
           <td id='mail'><?php echo $donnees['mail']; ?></td>
           <td id='categorie'><?php echo $donnees['categorie']; ?></td>
-          <td id='categorie'><?php echo $donnees['commentaire']; ?></td>
-          <td class="modifs"><a id="mod" href="pages/update.php?id=<?php echo $donnees['id']; ?> "> Modifier </a><a class="sup" href="pages/delete.php?id=<?php echo $donnees['id']; ?>"> Supprimer </a></td>      
+          <td id='commentire'><?php echo $donnees['commentaire']; ?></td>
+          <td class="modifs"><a id="mod" href="pages/update.php?id=<?php echo $donnees['id']; ?> "> <img src="inc/img/modify.png"> </a><a class="sup" href="pages/delete.php?id=<?php echo $donnees['id']; ?>"> <img src="inc/img/delete.png"> </a></td>      
       </tr>
       
       <?php
@@ -91,7 +100,9 @@
 
     <br>
 
-    <a id="ajout" href="pages/create.php">Ajouter un nouvel adhérent</a>
+    <div class="ajout">
+      <a id="ajout" href="pages/create.php">Ajouter un nouveau contact</a>
+    </div>
     
     <br>
     <br>  

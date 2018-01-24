@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Modifier un adhérent</title>
+		<link rel="stylesheet" type="text/css" href="../inc/css/style.css">
 	</head>
 
 	<body>
@@ -22,57 +23,92 @@
 			<form action="../process/traitement2.php" method="post">
 			
 
-					<input type="hidden" name="id" value="<?php echo $_GET['id'] ?>">
+				<input type="hidden" name="id" value="<?php echo $_GET['id'] ?>">
 
-				<div>
-					<label for="nom">Nom</label>
-					<input type="text" name="nom" value="<?php echo $resu['nom'] ?>">
+				<div class="entreeform">
+					<div class="left">
+						<label for="nom">Nom</label>
+					</div>
+					<div class="right">
+						<input type="text" name="nom" value="<?php echo $resu['nom'] ?>">
+					</div>
 				</div>
 				
-				<div>
-					<label for="adresse">Adresse</label>
-					<input type="text" name="adresse" value="<?php echo $resu['adresse'] ?>">
+				<div class="entreeform">
+					<div class="left">
+						<label for="adresse">Adresse</label>
+					</div>
+					<div class="right">
+						<input type="text" name="adresse" value="<?php echo $resu['adresse'] ?>">
+					</div>
 				</div>
 
-				<div>
-					<label for="cp">Code Postal</label>
-					<input type="text" name="cp" value="<?php echo $resu['code_postal'] ?>">
+				<div class="entreeform">
+					<div class="left">
+						<label for="cp">Code Postal</label>
+					</div>
+					<div class="right">
+						<input type="text" name="cp" value="<?php echo $resu['code_postal'] ?>">
+					</div>
 				</div>
 				
-				<div>
-					<label for="ville">Ville</label>
-					<input type="ville" name="ville" value="<?php echo $resu['ville'] ?>">
+				<div class="entreeform">
+					<div class="left">
+						<label for="ville">Ville</label>
+					</div>
+					<div class="right">
+						<input type="ville" name="ville" value="<?php echo $resu['ville'] ?>">
+					</div>
 				</div>
 
-				<div>
-					<label for="phone">Téléphone</label>
-					<input type="text" name="phone" value="<?php echo $resu['telephone'] ?>">
+				<div class="entreeform">
+					<div class="left">
+						<label for="phone">Téléphone</label>
+					</div>
+					<div class="right">
+						<input type="text" name="phone" value="<?php echo $resu['telephone'] ?>">
+					</div>
 				</div>
 
-				<div>
-					<label for="mail">E-mail</label>
-					<input type="text" name="mail" value="<?php echo $resu['mail'] ?>">
+				<div class="entreeform">
+					<div class="left">
+						<label for="mail">E-mail</label>
+					</div>
+					<div class="right">
+						<input type="text" name="mail" value="<?php echo $resu['mail'] ?>">
+					</div>
 				</div>
 
-				<div>
-					<select name="categorie">
-						<option <?php if($resu['categorie'] == 'Adhérent') echo 'selected'; ?> value="Adhérent">Adhérent</option>
-						<option <?php if($resu['categorie'] == 'Bureau') echo 'selected'; ?> value="Bureau">Bureau</option>
-						<option <?php if($resu['categorie'] == 'CA') echo 'selected'; ?> value="CA">CA</option>
-						<option <?php if($resu['categorie'] == 'Bienfaiteur') echo 'selected'; ?> value="Bienfaiteur">Bienfaiteur</option>
-						<option <?php if($resu['categorie'] == 'Association') echo 'selected'; ?> value="Association">Association</option>
-						<option <?php if($resu['categorie'] == 'Entreprise') echo 'selected'; ?> value="Entreprise">Entreprise</option>
-						<option <?php if($resu['categorie'] == 'Collectivité') echo 'selected'; ?> value="Collectivité">Collectivité</option>
-						<option <?php if($resu['categorie'] == 'Prospect') echo 'selected'; ?> value="Prospect">Prospect</option>
-					</select>
+				<div class="entreeform">
+					<div class="left">
+						<label for="cat">Catégorie</label>
+					</div>
+					<div class="right">
+						<select name="categorie">
+							<option <?php if($resu['categorie'] == 'Adhérent') echo 'selected'; ?> value="Adhérent">Adhérent</option>
+							<option <?php if($resu['categorie'] == 'Bureau') echo 'selected'; ?> value="Bureau">Bureau</option>
+							<option <?php if($resu['categorie'] == 'CA') echo 'selected'; ?> value="CA">CA</option>
+							<option <?php if($resu['categorie'] == 'Bienfaiteur') echo 'selected'; ?> value="Bienfaiteur">Bienfaiteur</option>
+							<option <?php if($resu['categorie'] == 'Association') echo 'selected'; ?> value="Association">Association</option>
+							<option <?php if($resu['categorie'] == 'Entreprise') echo 'selected'; ?> value="Entreprise">Entreprise</option>
+							<option <?php if($resu['categorie'] == 'Collectivité') echo 'selected'; ?> value="Collectivité">Collectivité</option>
+							<option <?php if($resu['categorie'] == 'Prospect') echo 'selected'; ?> value="Prospect">Prospect</option>
+						</select>
+					</div>
 				</div>
 
-				<div>
-					<label for="com">Commentaire</label>
-					<input type="text" name="com" value="<?php echo $resu['commentaire'] ?>">
+				<div class="entreeform">
+					<div class="left">
+						<label for="com">Commentaire</label>
+					</div>
+					<div class="right">
+						<input type="text" name="com" value="<?php echo $resu['commentaire'] ?>">
+					</div>
 				</div>
-
-				<button type="submit" name="button">Envoyer</button>
+				
+				<div class="ajout">
+					<button type="submit" name="button">Envoyer</button>
+				</div>
 			</form>
 		</div>
 	</body>

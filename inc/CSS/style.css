@@ -1,0 +1,184 @@
+/********************* Genéral *********************/
+
+body{
+	margin: 0;
+	padding: 0;
+	
+	background-color: rgba(255, 255, 0, 0.4);
+	color: black;
+	
+	font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+}
+
+/********************* index *********************/
+
+h1{
+	text-align: center;
+}
+
+.cherche{
+	display: block;
+	width: 25%;
+	height: auto;
+	margin: 0 auto;
+	padding: 0.3% 0.5%;
+
+	background-color: black;
+	color: 	white;
+
+	border-top-right-radius: 10px;
+}
+
+.cherche input{
+	margin: 1% 0;
+	width: 100%;
+	height: 20px;
+}
+
+.cherche select{
+	height: 20px;
+	width: 100%;
+}
+
+#btn{
+	height: 20px;
+	width: 100%;
+
+	color: white;
+	background-color: blue;
+}
+
+.cherche2{
+	display: block;
+	width: 25%;
+	height: auto;
+	margin: 0 auto;
+	padding: 0 0.5%;
+
+	background-color: black;
+	color: 	white;
+
+	text-align: right;
+
+	border-bottom-left-radius: 10px;
+}
+
+span{
+	color: orange;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+table{
+	display: table;
+	width: 95%;	
+	margin: 1% auto;
+	padding: 0 2%;
+
+	background-color: white;
+
+	border-collapse: collapse;
+}
+
+th{
+	height: 30px;
+	color: blue;
+	border-bottom: 2px solid orange;
+}
+
+td{
+	height: 50px;
+	border-bottom: 1px solid black;
+}
+
+a{
+	text-decoration: none;
+}
+
+#nom{
+	font-weight: bold;
+}
+
+#telephone{
+	width: 10%;
+}
+
+.modifs{
+	width: 10%;
+	height: auto;
+	text-align: center;
+}
+
+.modifs img{
+	width: 15%;
+	height: auto;
+	margin: 0 2%;
+}
+
+.ajout{
+	text-align: center;
+	font-weight: bold;
+}
+
+/********************* ajout *********************/
+
+.fond{
+	display: block;
+	width: 50%;
+	height: auto;
+
+	margin: 0 auto;
+	padding: 0.5% 1%;
+
+	background-color: black;
+	color: white;
+
+	vertical-align: middle;
+	line-height: 200%;
+
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+
+
+}
+
+.entreeform{
+	width: 100%;
+	height: auto;
+/*	background-color: red;*/
+}
+
+.left{
+	width: 30%;
+	height: 25px;
+	float: left;
+	/*background-color: blue;*/
+}
+
+.right select{
+	width: 100%;
+	height: 25px;
+	margin: 1% auto;
+}
+
+.right{
+	display: block;
+	width: 70%;
+	height: 25px;
+	float: left;
+	margin: 1% auto;
+	/*background-color: green;*/
+}
+
+.right input {
+	width: 100%;
+	height: 25px;
+
+}
+
+.ajout button{
+	margin: 2% 0 0 0;
+	background-color: blue;
+	color: white;
+}
