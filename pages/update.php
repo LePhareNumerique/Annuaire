@@ -15,7 +15,7 @@
 			$resu=$res->fetch();
 		?>
 
-		<a href="read.php">Retour</a>
+		<a href="index.php">Retour</a>
 		
 		<h1>Modifier</h1>
 
